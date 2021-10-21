@@ -79,7 +79,7 @@ namespace ASPSearchCreateCsv.Controllers
             if (getalldata.Count > 0)
             {
                 //    //disable detection of changes to improve performance
-                context.Configuration.AutoDetectChangesEnabled = false;
+                //context.Configuration.AutoDetectChangesEnabled = false;
                 char[] charArr = searchkeyword.ToCharArray();
 
                 for (int i = 0; i < getalldata.Count; i++)
@@ -102,16 +102,16 @@ namespace ASPSearchCreateCsv.Controllers
                             if(k == charArr.Length - 1)
                             {
                                 listcsv.Add(getalldata[i]);
-                                //Matched
+                                ////Matched
                                 getalldata[i].MatchedTimes += 1;
-                                context.CSVDatas.Add(getalldata[i]);
-                                context.Entry(getalldata[i]).State = EntityState.Modified;
+                                //context.CSVDatas.Add(getalldata[i]);
+                                //context.Entry(getalldata[i]).State = EntityState.Modified;
                             }
                         }
                     }
                 }
-                context.SaveChanges();
-                context.Configuration.AutoDetectChangesEnabled = true;
+                //context.SaveChanges();
+                //context.Configuration.AutoDetectChangesEnabled = true;
 
 
 
